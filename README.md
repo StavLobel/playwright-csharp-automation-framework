@@ -1,5 +1,11 @@
 # Playwright C# Automation Framework
 
+[![.NET](https://img.shields.io/badge/.NET-8.0-512BD4?logo=dotnet)](https://dotnet.microsoft.com/)
+[![Playwright](https://img.shields.io/badge/Playwright-1.48.0-2EAD33?logo=playwright)](https://playwright.dev/)
+[![NUnit](https://img.shields.io/badge/NUnit-4.2.2-22B14C?logo=nunit)](https://nunit.org/)
+[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![GitHub](https://img.shields.io/github/stars/StavLobel/playwright-csharp-automation-framework?style=social)](https://github.com/StavLobel/playwright-csharp-automation-framework)
+
 A lightweight automation framework built with C# and Playwright that implements Clean Architecture principles. The framework supports both UI and API testing with Page Object Model (POM) design, utility functions, and comprehensive HTML reporting.
 
 ## Features
