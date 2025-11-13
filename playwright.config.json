@@ -1,0 +1,54 @@
+{
+  "reporter": [
+    [
+      "html",
+      {
+        "outputFolder": "Reports/playwright-report",
+        "open": "never"
+      }
+    ],
+    [
+      "json",
+      {
+        "outputFile": "Reports/test-results.json"
+      }
+    ],
+    [
+      "junit",
+      {
+        "outputFile": "Reports/junit-results.xml"
+      }
+    ],
+    [
+      "list"
+    ]
+  ],
+  "use": {
+    "screenshot": "only-on-failure",
+    "video": "retain-on-failure",
+    "trace": "retain-on-failure"
+  },
+  "outputDir": "Reports/test-artifacts",
+  "testDir": "./Tests",
+  "timeout": 30000,
+  "expect": {
+    "timeout": 5000
+  },
+  "fullyParallel": false,
+  "forbidOnly": false,
+  "retries": 0,
+  "workers": 4,
+  "projects": [
+    {
+      "name": "chromium",
+      "use": {
+        "browserName": "chromium",
+        "viewport": {
+          "width": 1920,
+          "height": 1080
+        },
+        "headless": false
+      }
+    }
+  ]
+}

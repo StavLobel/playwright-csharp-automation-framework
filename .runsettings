@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RunSettings>
+  <!-- NUnit Configuration -->
+  <NUnit>
+    <!-- Number of worker threads for parallel execution -->
+    <NumberOfTestWorkers>4</NumberOfTestWorkers>
+    
+    <!-- Default timeout for tests (in milliseconds) -->
+    <DefaultTimeout>60000</DefaultTimeout>
+    
+    <!-- Where test results are saved -->
+    <WorkDirectory>TestResults</WorkDirectory>
+    
+    <!-- Internal trace level: Off, Error, Warning, Info, Verbose -->
+    <InternalTraceLevel>Info</InternalTraceLevel>
+    
+    <!-- Random seed for test order randomization (0 = use time-based seed) -->
+    <RandomSeed>0</RandomSeed>
+    
+    <!-- Verbosity of test output: Quiet, Minimal, Normal, Detailed -->
+    <Verbosity>Normal</Verbosity>
+  </NUnit>
+
+  <!-- Test Run Parameters -->
+  <TestRunParameters>
+    <Parameter name="BaseUrl" value="https://en.wikipedia.org" />
+    <Parameter name="BrowserType" value="chromium" />
+    <Parameter name="Headless" value="false" />
+  </TestRunParameters>
+
+  <!-- Logging Configuration -->
+  <LoggerRunSettings>
+    <Loggers>
+      <Logger friendlyName="console" enabled="True">
+        <Configuration>
+          <Verbosity>normal</Verbosity>
+        </Configuration>
+      </Logger>
+      <Logger friendlyName="trx" enabled="True">
+        <Configuration>
+          <LogFileName>test-results.trx</LogFileName>
+        </Configuration>
+      </Logger>
+      <Logger friendlyName="html" enabled="True">
+        <Configuration>
+          <LogFileName>test-results.html</LogFileName>
+        </Configuration>
+      </Logger>
+    </Loggers>
+  </LoggerRunSettings>
+
+  <!-- Data Collection -->
+  <DataCollectionRunSettings>
+    <DataCollectors>
+      <DataCollector friendlyName="Code Coverage" uri="datacollector://Microsoft/CodeCoverage/2.0" assemblyQualifiedName="Microsoft.VisualStudio.Coverage.DynamicCoverageDataCollector, Microsoft.VisualStudio.TraceCollector, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+        <Configuration>
+          <CodeCoverage>
+            <ModulePaths>
+              <Include>
+                <ModulePath>.*PlaywrightAutomation\.dll$</ModulePath>
+              </Include>
+              <Exclude>
+                <ModulePath>.*Tests\.dll$</ModulePath>
+              </Exclude>
+            </ModulePaths>
+          </CodeCoverage>
+        </Configuration>
+      </DataCollector>
+    </DataCollectors>
+  </DataCollectionRunSettings>
+
+  <!-- Run Configuration -->
+  <RunConfiguration>
+    <!-- Path relative to directory that contains .runsettings file -->
+    <ResultsDirectory>./TestResults</ResultsDirectory>
+    
+    <!-- Target platform: x86, x64, ARM -->
+    <TargetPlatform>x64</TargetPlatform>
+    
+    <!-- Framework: net8.0, net6.0, etc. -->
+    <TargetFrameworkVersion>net8.0</TargetFrameworkVersion>
+    
+    <!-- Maximum number of test execution processes -->
+    <MaxCpuCount>0</MaxCpuCount>
+    
+    <!-- Batch size for test execution -->
+    <BatchSize>10</BatchSize>
+    
+    <!-- Test session timeout in milliseconds -->
+    <TestSessionTimeout>3600000</TestSessionTimeout>
+    
+    <!-- Treat test adapter errors as warnings -->
+    <TreatTestAdapterErrorsAsWarnings>false</TreatTestAdapterErrorsAsWarnings>
+  </RunConfiguration>
+
+  <!-- Playwright Configuration -->
+  <Playwright>
+    <BrowserName>chromium</BrowserName>
+    <LaunchOptions>
+      <Headless>false</Headless>
+      <SlowMo>0</SlowMo>
+    </LaunchOptions>
+    <ExpectTimeout>5000</ExpectTimeout>
+    <Timeout>30000</Timeout>
+  </Playwright>
+</RunSettings>
