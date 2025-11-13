@@ -127,9 +127,8 @@ Desktop.ini
 # Kiro Workspace
 ##########################
 
-# Kiro configuration (keep specs)
-.kiro/*
-!.kiro/specs/
+# Kiro configuration
+.kiro/
 
 ##########################
 # Environment & Secrets
